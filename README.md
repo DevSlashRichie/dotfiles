@@ -18,3 +18,7 @@ site: https://github.com/neovim/neovim/wiki/Installing-Neovim
 
 After installing NVIM you can install my styles to make it look better :)
 
+## GITHUB
+
+To setup github you'll need to create an ssh key & gpg key which I expect this to be 
+done manually
