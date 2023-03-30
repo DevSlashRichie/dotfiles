@@ -1,16 +1,28 @@
 #!/bin/bash
 
+# Will also install some from other parts
+# https://github.com/gustavohellwig/gh-zsh
 
-src_dir=$(pwd)/plugins
-dest_dir="$HOME/.config/zsh-plugins"
+# zsh-completions
+git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
 
-mkdir -p "$dest_dir"
+# zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-cp -r "$src_dir"/* "$dest_dir"/
+
+# fast-syntax-highlighting
+git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git \
+  ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
 
 
-for plugin_file in "$dest_dir"/*; do
-  echo "source $plugin_file" >> "$HOME/.zshrc"
-done
+echo installing base configuration 
 
-echo zsh plugins ready! 
+cat $(pwd)/.base-zrc > $HOME/.zshrc
+
+# I am sure I need top fix this xd
+# echo "plugins=(git fancy-ctrl-z zsh-autosuggestions fast-syntax-highlighting)"
+
+echo installing utilities
+
+$(pwd)/utilities/install-utilities.sh
+

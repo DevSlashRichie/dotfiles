@@ -1,5 +1,6 @@
 #!/bin/bash
 
-pacman -S neovim --noconfirm
+# pacman -S neovim --noconfirm
+
 
 
