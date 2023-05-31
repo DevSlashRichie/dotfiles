@@ -9,15 +9,20 @@ export PATH="$PATH:/home/ricardo/.local/bin"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # plugins
+export ZSH_TMUX_AUTOSTART=true
+export ZSH_TMUX_CONFIG="$HOME/.config/tmux/tmux.conf"
 
 plugins=(
     git
     fancy-ctrl-z
     zsh-autosuggestions
     fast-syntax-highlighting
+    sudo
+    tmux
 )
 
 source $ZSH/oh-my-zsh.sh
+
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -37,3 +42,8 @@ alias lext='ls *.$1'
 alias mktc='cd $(mktemp -d)'
 alias mkt='mktemp -d'
 alias k='kubectl'
+alias vim='nvim'
+alias v='nvim'
+alias icat='kitty +kitten icat'
+
+export PATH=$PATH:/home/ricardo/.spicetify
