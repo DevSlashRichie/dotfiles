@@ -11,6 +11,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # plugins
 export ZSH_TMUX_AUTOSTART=true
 export ZSH_TMUX_CONFIG="$HOME/.config/tmux/tmux.conf"
+ZSH_TMUX_UNICODE=true
 
 plugins=(
     git
@@ -19,10 +20,11 @@ plugins=(
     fast-syntax-highlighting
     sudo
     tmux
+    kubectl
+    kubectx
 )
 
 source $ZSH/oh-my-zsh.sh
-
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
