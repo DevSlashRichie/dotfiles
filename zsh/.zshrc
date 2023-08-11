@@ -22,6 +22,8 @@ plugins=(
     tmux
     kubectl
     kubectx
+    poetry
+    rust
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -47,5 +49,7 @@ alias k='kubectl'
 alias vim='nvim'
 alias v='nvim'
 alias icat='kitty +kitten icat'
+alias py='python3'
+alias cd='z'
 
-export PATH=$PATH:/home/ricardo/.spicetify
+eval "$(zoxide init zsh)"
