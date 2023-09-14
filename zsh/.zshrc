@@ -51,5 +51,7 @@ alias v='nvim'
 alias icat='kitty +kitten icat'
 alias py='python3'
 alias cd='z'
+alias clip='xclip -sel clip'
+alias v='vim $(fzf)'
 
 eval "$(zoxide init zsh)"
